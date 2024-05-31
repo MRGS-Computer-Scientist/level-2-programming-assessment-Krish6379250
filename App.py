@@ -29,8 +29,9 @@ class App():
         self.home_button = Button(self.home_frame, text="Start", height=10, width=75, bg="#7899D4", command=lambda: self.go_to_frame("map"))
         #change command from exit to next page later
         self.home_button.place(x=30, y=400)
+        ######################## MAP/NEW PAGE ##############################
+        self.map_main_frame = Frame(background=bg_color, width=w_width, height=600)
 
-        self.map_frame = Frame(background=bg_color, width=w_width, height=600)
 
 
 
@@ -46,7 +47,7 @@ class App():
 
         self.window.mainloop()
 
-    
+    ################################### DEF ###################################
     def exit(self):
         self.window.destroy()
 
@@ -55,6 +56,10 @@ class App():
             self.home_frame.pack_forget and self.top_frame.pack_forget()
         if next_frame =="map":
             self.current_frame="map"
+
+
+
+
 
 
 
