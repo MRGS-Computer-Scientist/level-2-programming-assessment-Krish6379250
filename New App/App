@@ -1,0 +1,33 @@
+from tkinter import *
+from app_setting import *
+from os import *
+
+
+class App():
+
+    
+    def __init__(self):
+        self.window = Tk()
+        self.window.geometry(str(w_width) + "x" + str(w_height))
+        self.window.title(app_title)
+
+        ##################### TOP LEFT ##########################
+
+
+
+        
+        ###################### TOP RIGHT ###############################
+
+
+
+
+        ########################## MIDDLE ##################################
+
+
+
+
+        ########################## BOTTOM LEFT ################################
+
+
+
+        ############################ BOTTOM RIGHT #############################
