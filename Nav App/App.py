@@ -1,5 +1,5 @@
 from tkinter import *
-from ap_setting import * 
+from app_setting import * 
 from os import *
 
 
@@ -23,7 +23,7 @@ class App():
 
         #################### HOME FRAME ############################
 
-        self.home_frame = Frame(background=bg_color, width=w_width, height=600)
+        self.home_frame = Frame(background=bg_color, width=w_width, height=(w_height-200))
         
         self.home_frame.pack()
         
@@ -32,11 +32,9 @@ class App():
         #change command from exit to next page later
         self.home_button.place(x=30, y=400)
         ######################## MAP/NEW PAGE ##############################
-        self.map_top_frame= Frame(background=bg_color, width=w_width, height=200)
+        self.map_top_frame= Frame(background=bg_color, width=w_width, height=500)
 
-        self.map_main_frame = Frame(background=bg_color, width=w_width, height=w_height-400)
-        
-        self.map_bottom_frame = Frame(background=bg_color, width=w_width, height=200)
+        self.map_bottom_frame = Frame(background=bg_color, width=w_width, height=500)
 
 
 
@@ -55,14 +53,23 @@ class App():
         self.window.mainloop()
 
     ################################### DEF ###################################
-    def exit(self):
-        self.window.destroy()
 
+    ################# From Start Page to Main Page ##################
     def go_to_frame(self, next_frame):
         if self.current_frame == "home":
-            self.home_frame.pack_forget and self.top_frame.pack_forget()
+            self.home_frame.pack_forget()
+        if self.current_frame == "home":
+            self.top_frame.pack_forget()
+        if self.current_frame == "home":
+            self.home_button.destroy()
+        if self.current_frame == "home":
+            self.map_top_frame and self.map_bottom_frame.pack()
+    #............... From Start Page to Main Page ..................
         if next_frame =="map":
             self.current_frame="map"
+
+        
+    #............................. DEF ...............................
 
 
 
