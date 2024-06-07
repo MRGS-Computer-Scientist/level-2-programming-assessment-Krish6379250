@@ -8,6 +8,7 @@ class App():
     current_frame= "home"
 
 
+
     def __init__(self):
         self.window = Tk()
         self.window.geometry(str(w_width) + "x" + str(w_height))
@@ -32,9 +33,13 @@ class App():
         #change command from exit to next page later
         self.home_button.place(x=30, y=400)
         ######################## MAP/NEW PAGE ##############################
-        self.map_top_frame= Frame(background=bg_color, width=w_width, height=500)
+        ####################### TOP HALF ##############################
+        self.top_map_frame= Frame(background="#F9F9F9", width=w_width, height=500)
 
-        self.map_bottom_frame = Frame(background=bg_color, width=w_width, height=500)
+        self.top_left_frame = Frame(self.top_map_frame, background="Blue", width=300, height=500)
+
+         ######################### BOTTOM HALF ######################################
+        self.bottom_map_frame = Frame(background="yellow", width=w_width, height=600)
 
 
 
@@ -54,16 +59,22 @@ class App():
 
     ################################### DEF ###################################
 
-    ################# From Start Page to Main Page ##################
+    ################# If the start button is pressed ##################
     def go_to_frame(self, next_frame):
         if self.current_frame == "home":
             self.home_frame.pack_forget()
         if self.current_frame == "home":
             self.top_frame.pack_forget()
         if self.current_frame == "home":
+            self.bottom_frame.pack_forget()
+        if self.current_frame == "home":
             self.home_button.destroy()
         if self.current_frame == "home":
-            self.map_top_frame and self.map_bottom_frame.pack()
+            self.top_map_frame.pack()
+        if self.current_frame == "home":
+            self.bottom_map_frame.pack()
+        
+             
     #............... From Start Page to Main Page ..................
         if next_frame =="map":
             self.current_frame="map"
