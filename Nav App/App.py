@@ -9,6 +9,7 @@ class App():
 
 
 
+
     def __init__(self):
         self.window = Tk()
         self.window.geometry(str(w_width) + "x" + str(w_height))
@@ -29,17 +30,21 @@ class App():
         self.home_frame.pack()
         
         self.home_button = Button(self.home_frame, text="Start", height=10, width=75, bg="#7899D4",
-                                   command=lambda: self.go_to_frame("map"))
+                                   command=lambda: self.go_to_frame("map") and self.show_frame)
         #change command from exit to next page later
         self.home_button.place(x=30, y=400)
         ######################## MAP/NEW PAGE ##############################
-        ####################### TOP HALF ##############################
-        self.top_map_frame= Frame(background="#F9F9F9", width=w_width, height=500)
 
-        self.top_left_frame = Frame(self.top_map_frame, background="Blue", width=300, height=500)
+        ####################### TOP HALF ##############################
+
+        self.top_left_frame= Frame( background="Red", width=300, height=500)
+        self.top_left_frame.place_forget()
+
+        self.top_right_frame = Frame( background="Blue", width=300, height=500)
+        self.top_right_frame.place_forget()
+
 
          ######################### BOTTOM HALF ######################################
-        self.bottom_map_frame = Frame(background="yellow", width=w_width, height=600)
 
 
 
@@ -69,15 +74,17 @@ class App():
             self.bottom_frame.pack_forget()
         if self.current_frame == "home":
             self.home_button.destroy()
-        if self.current_frame == "home":
-            self.top_map_frame.pack()
-        if self.current_frame == "home":
-            self.bottom_map_frame.pack()
         
-             
-    #............... From Start Page to Main Page ..................
         if next_frame =="map":
             self.current_frame="map"
+
+
+
+    #............... From Start Page to Main Page ..................
+
+    def show_frame(self):
+        self.top_left_frame.place(x=0, y=0)
+        self.top_right_frame.place(x=450, y=0)
 
         
     #............................. DEF ...............................
