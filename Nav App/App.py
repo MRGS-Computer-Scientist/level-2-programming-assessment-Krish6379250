@@ -26,25 +26,27 @@ class App():
         #################### HOME FRAME ############################
 
         self.home_frame = Frame(background=bg_color, width=w_width, height=(w_height-200))
-        
         self.home_frame.pack()
         
         self.home_button = Button(self.home_frame, text="Start", height=10, width=75, bg="#7899D4",
-                                   command=lambda: self.go_to_frame("map") and self.show_frame)
+                                   command=lambda: self.go_to_frame("map"))
         #change command from exit to next page later
         self.home_button.place(x=30, y=400)
         ######################## MAP/NEW PAGE ##############################
 
-        ####################### TOP HALF ##############################
+        self.frame_top_left = Frame( width=200, height=150, bg="red")
+        
+        self.frame_top_right = Frame( width=200, height=150, bg="green")
+        
+        self.frame_bottom_left = Frame( width=200, height=150, bg="blue")
+        
+        self.frame_bottom_right = Frame( width=200, height=150, bg="yellow")
+        
 
-        self.top_left_frame= Frame( background="Red", width=300, height=500)
-        self.top_left_frame.place_forget()
-
-        self.top_right_frame = Frame( background="Blue", width=300, height=500)
-        self.top_right_frame.place_forget()
+      
 
 
-         ######################### BOTTOM HALF ######################################
+      
 
 
 
@@ -74,17 +76,26 @@ class App():
             self.bottom_frame.pack_forget()
         if self.current_frame == "home":
             self.home_button.destroy()
+        if self.current_frame == "home":
+
+
+         if next_frame =="map":
+           self.current_frame="map"
         
-        if next_frame =="map":
-            self.current_frame="map"
+
+
+
 
 
 
     #............... From Start Page to Main Page ..................
 
-    def show_frame(self):
-        self.top_left_frame.place(x=0, y=0)
-        self.top_right_frame.place(x=450, y=0)
+    def new_page(self):
+        self.frame_top_left.pack()
+        self.frame_top_right.pack()
+        self.frame_bottom_left.pack()
+        self.frame_bottom_right()
+
 
         
     #............................. DEF ...............................
