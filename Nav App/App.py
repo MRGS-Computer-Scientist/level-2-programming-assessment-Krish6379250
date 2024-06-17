@@ -26,12 +26,34 @@ class App():
                                    command=lambda: self.go_to_frame("map"))
         self.home_button.place(x=35, y=400)
         ######################## New Page ################################
-        self.top_left_frame = Frame(background="red", width=300, height=500)
-        self.top_right_frame = Frame(background="blue", width=300, height=500)
-        self.bottom_left_frame = Frame(background="yellow", width=300, height=500)
-        self.bottom_right_frame = Frame(background="green", width=300, height=500)
+        ########################## 4 Corners #######################################
+        self.top_left_frame = Frame(background="white", width=300, height=500)
+        self.top_right_frame = Frame(background="white", width=300, height=500)
+        self.bottom_left_frame = Frame(background="white", width=300, height=500)
+        self.bottom_right_frame = Frame(background="white", width=300, height=500)
 
-        selstyle = self.Style()
+        ####################### Center Button #################################
+        self.map_button = Button(text= "Map", height=5, width=10,  bg="#7899D4")
+
+        ######################## Location #################################
+
+        self.location_frame = Frame(background="#DDE1E4", width=250, height=470)
+
+        #####################Desination ##################################
+
+        self.destination_frame = Frame(background="#DDE1E4", width=250, height=470)
+
+        ################################# Direction ############################
+
+        self.direction_frame = Frame(background="#DDE1E4", width=250, height=470)
+
+        ############################### Info ####################################
+
+        self.info_frame = Frame(background="#DDE1E4", width=250, height=470)
+
+
+
+
 
 
 
@@ -50,9 +72,14 @@ class App():
            self.top_right_frame.place(x=300,y=0)
            self.bottom_left_frame.place(x=0, y=500)
            self.bottom_right_frame.place(x=300, y=500)
+           self.map_button.place(x=260, y=450)
+           self.location_frame.place(x=5, y=5)
+           self.destination_frame.place(x=345, y=5)
+           self.direction_frame.place(x=5, y=500)
+           self.info_frame.place(x=345, y=500)
         if self.current_frame == "home":
          
-
+ 
 
          if next_frame =="map":
            self.current_frame="map"
