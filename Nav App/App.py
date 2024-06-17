@@ -38,18 +38,39 @@ class App():
         ######################## Location #################################
 
         self.location_frame = Frame(background="#DDE1E4", width=250, height=470)
+        self.location_headline = Label(self.location_frame, text="Location", font=("Ubuntu",25), bg="#DDE1E4")
+
+        self.location_button_frame= Frame(background="#F4F4F8", width=240, height=410)
 
         #####################Desination ##################################
 
         self.destination_frame = Frame(background="#DDE1E4", width=250, height=470)
+        self.destination_headline = Label(self.destination_frame, text="Desination", font=("Ubuntu",25), bg="#DDE1E4")
+
+        self.destination_button_frame= Frame(background="#F4F4F8", width=240, height=410)
+
 
         ################################# Direction ############################
 
         self.direction_frame = Frame(background="#DDE1E4", width=250, height=470)
+        self.direction_headline = Label(self.direction_frame, text="Direction", font=("Ubuntu",25), bg="#DDE1E4")
+
+        self.direction_button_frame= Frame(background="#F4F4F8", width=240, height=410)
+
 
         ############################### Info ####################################
 
         self.info_frame = Frame(background="#DDE1E4", width=250, height=470)
+        self.info_headline = Label(self.info_frame, text="Info", font=("Ubuntu",25), bg="#DDE1E4")
+
+        self.info_button_frame= Frame(background="#F4F4F8", width=240, height=410)
+
+        self.info_office_button= Button(self.info_button_frame, text="Office", width=30, height=1, bg="#7899D4")
+        self.info_deans_button= Button(self.info_button_frame, text="Deans", width=30, height=1, bg="#7899D4")
+        self.info_gyms_button= Button(self.info_button_frame, text="Gyms", width=30, height=1, bg="#7899D4")
+        self.info_eblock_button= Button(self.info_button_frame, text="E Block", width=30, height=1, bg="#7899D4")
+    
+
 
 
 
@@ -68,15 +89,33 @@ class App():
         if self.current_frame == "home":
             self.home_button.destroy()
         if self.current_frame == "home":
+           ############### 4 corners #######################
            self.top_left_frame.place(x=0, y=0)
            self.top_right_frame.place(x=300,y=0)
            self.bottom_left_frame.place(x=0, y=500)
            self.bottom_right_frame.place(x=300, y=500)
+           ############### Map Button ################
            self.map_button.place(x=260, y=450)
+           ############## 4 components ###################
            self.location_frame.place(x=5, y=5)
            self.destination_frame.place(x=345, y=5)
            self.direction_frame.place(x=5, y=500)
            self.info_frame.place(x=345, y=500)
+           ################ 4 headlines ##################
+           self.location_headline.place(x=60, y=5)
+           self.destination_headline.place(x=60, y=5)
+           self.direction_headline.place(x=60, y=5)
+           self.info_headline.place(x=100, y=5)
+           
+           self.location_button_frame.place(x=10, y=55)
+           self.destination_button_frame.place(x=350, y=55)
+           self.direction_button_frame.place(x=10, y=550)
+           self.info_button_frame.place(x=350, y=550)
+           self.info_office_button.place(x=13, y=10)
+           self.info_deans_button.place(x=13, y=40)
+           self.info_gyms_button.place(x=13, y=70)
+           self.info_eblock_button.place(x=13, y=100)
+
         if self.current_frame == "home":
          
  
