@@ -42,12 +42,22 @@ class App():
 
         self.location_button_frame= Frame(background="#F4F4F8", width=240, height=410)
 
+        self.location_office_button= Button(self.location_button_frame, text="Office", width=30, height=1, bg="#7899D4")
+        self.location_deans_button= Button(self.location_button_frame, text="Deans", width=30, height=1, bg="#7899D4")
+        self.location_hall_button= Button(self.location_button_frame, text="Hall", width=30, height=1, bg="#7899D4")
+        self.location_eblock_button= Button(self.location_button_frame, text="E Block", width=30, height=1, bg="#7899D4")
+
         #####################Desination ##################################
 
         self.destination_frame = Frame(background="#DDE1E4", width=250, height=470)
         self.destination_headline = Label(self.destination_frame, text="Desination", font=("Ubuntu",25), bg="#DDE1E4")
 
         self.destination_button_frame= Frame(background="#F4F4F8", width=240, height=410)
+
+        self.destination_office_button= Button(self.destination_button_frame, text="Office", width=30, height=1, bg="#7899D4")
+        self.destination_deans_button= Button(self.destination_button_frame, text="Deans", width=30, height=1, bg="#7899D4")
+        self.destination_hall_button= Button(self.destination_button_frame, text="Hall", width=30, height=1, bg="#7899D4")
+        self.destination_eblock_button= Button(self.destination_button_frame, text="E Block", width=30, height=1, bg="#7899D4")
 
 
         ################################# Direction ############################
@@ -67,8 +77,12 @@ class App():
 
         self.info_office_button= Button(self.info_button_frame, text="Office", width=30, height=1, bg="#7899D4")
         self.info_deans_button= Button(self.info_button_frame, text="Deans", width=30, height=1, bg="#7899D4")
-        self.info_gyms_button= Button(self.info_button_frame, text="Gyms", width=30, height=1, bg="#7899D4")
+        self.info_hall_button= Button(self.info_button_frame, text="Hall", width=30, height=1, bg="#7899D4", command=self.hall_info)
         self.info_eblock_button= Button(self.info_button_frame, text="E Block", width=30, height=1, bg="#7899D4")
+
+        self.info_text_frame = Frame(self.info_button_frame ,background="#FDFFFC",width=230, height=275 )
+
+        self.hall_info_text = Label(self.info_text_frame ,background="#FDFFFC" ,text="A large Assembly Hall with stage, sound and lighting equipment.",)
     
 
 
@@ -106,15 +120,27 @@ class App():
            self.destination_headline.place(x=60, y=5)
            self.direction_headline.place(x=60, y=5)
            self.info_headline.place(x=100, y=5)
-           
+           ############### component inner frames ##################
            self.location_button_frame.place(x=10, y=55)
            self.destination_button_frame.place(x=350, y=55)
            self.direction_button_frame.place(x=10, y=550)
            self.info_button_frame.place(x=350, y=550)
+           self.info_text_frame.place(x=5, y=130)
+           ####################### info buttons############################
            self.info_office_button.place(x=13, y=10)
            self.info_deans_button.place(x=13, y=40)
-           self.info_gyms_button.place(x=13, y=70)
+           self.info_hall_button.place(x=13, y=70)
            self.info_eblock_button.place(x=13, y=100)
+           ##################### location buttons #########################
+           self.location_office_button.place(x=13, y=10)
+           self.location_deans_button.place(x=13, y=40)
+           self.location_hall_button.place(x=13, y=70)
+           self.location_eblock_button.place(x=13, y=100)
+           ###################### destination buttons #########################
+           self.destination_office_button.place(x=13, y=10)
+           self.destination_deans_button.place(x=13, y=40)
+           self.destination_hall_button.place(x=13, y=70)
+           self.destination_eblock_button.place(x=13, y=100)
 
         if self.current_frame == "home":
          
@@ -130,6 +156,13 @@ class App():
 
 
     #............... From Start Page to Main Page ..................
+    def hall_info(self):
+       self.hall_info_text.place(x=13, y=5)
+
+    def deans_info(self):
+       print("The House system at Mount Roskill Grammar School comprises five houses – Hillary, Rutherford, Cooper, Ngata and Sheppard. Each house operates as a family, providing all students with an identity within the larger school.")
+       print ("Each House has is overseen by a team of three Deans and a member of the senior leadership team. These focus on pastoral and academic monitoring and support, supervise house activities and set expectations of student behaviour and habits of learning, provide support, welfare and guidance. House assemblies are held regularly and inter-house events are arranged during the year in activities such as volleyball, basketball, netball, athletics and swimming. Through their houses students are also encouraged to be of service to the wider community by fundraising for charities.")
+       print("The Deans is where each house is put")
 
 
 
