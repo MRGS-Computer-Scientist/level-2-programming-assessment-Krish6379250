@@ -42,13 +42,14 @@ class App():
 
         self.location_button_frame= Frame(background="#F4F4F8", width=240, height=410)
 
-        self.location_office_button= Button(self.location_button_frame, text="Office", width=30, height=1, bg="#7899D4")
-        self.location_deans_button= Button(self.location_button_frame, text="Deans", width=30, height=1, bg="#7899D4")
-        self.location_hall_button= Button(self.location_button_frame, text="Hall", width=30, height=1, bg="#7899D4")
-        self.location_gyms_button= Button(self.location_button_frame, text="Gyms", width=30, height=1, bg="#7899D4")
+        self.location_office_button= Button(self.location_button_frame, text="Office", width=30, height=1, bg="#7899D4", command=self.selected_location_office)
+        self.location_deans_button= Button(self.location_button_frame, text="Deans", width=30, height=1, bg="#7899D4", command=self.selected_location_dean)
+        self.location_hall_button= Button(self.location_button_frame, text="Hall", width=30, height=1, bg="#7899D4", command=self.selected_location_hall)
+        self.location_gyms_button= Button(self.location_button_frame, text="Gyms", width=30, height=1, bg="#7899D4", command=self.selected_location_gyms)
 
         self.location_select_frame = Frame(background="#DDE1E4", width=230, height=40)
         self.location_select_text = Label(self.location_select_frame ,background="#DDE1E4", text="Selected :", font=("Ubuntu",20))
+
         self.location_select_office = Label(self.location_select_frame ,background="#DDE1E4", text="Office", font=("Ubuntu",20))
         self.location_select_deans = Label(self.location_select_frame ,background="#DDE1E4", text=" Deans", font=("Ubuntu",20))
         self.location_select_gyms = Label(self.location_select_frame ,background="#DDE1E4", text=" Gyms", font=("Ubuntu",20))
@@ -107,7 +108,7 @@ At MRGS the use of the office is to manage administrative duties, such as answer
 MRGS is fortunate to have great facilities for our students to enjoy. Three Gymnasium, field, turf and a swimming pool allow students to participate in a variety of activities in a comfortable environment.
 The Department is well served with quality teachers. The HPE Staff are passionate about helping and encouraging all students, to reach their potential, acquire the knowledge that is needed for independent, critical thinkers and to  develop skills for lifelong learning.
 """)
-    
+        
 
 
 
@@ -197,9 +198,21 @@ The Department is well served with quality teachers. The HPE Staff are passionat
     def gyms_info(self):
        self.gyms__info_text.place(x=2, y=0)
 
-    ####################### def location selected text   
+    ####################### def location selected text   #######################
 
-    def selected_location_office(self)
+    def selected_location_office(self):
+       self.location_select_office.place(x=125, y=0)
+
+    def selected_location_dean(self):
+       self.location_select_deans.place(x=125, y=0)
+
+    def selected_location_gyms(self):
+       self.location_select_gyms.place(x=125, y=0)
+
+    def selected_location_hall(self):
+       self.location_select_hall.place(x=125, y=0)
+       
+       
        
         
     #............................. DEF ...............................
