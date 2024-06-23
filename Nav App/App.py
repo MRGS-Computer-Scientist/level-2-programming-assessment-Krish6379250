@@ -42,10 +42,10 @@ class App():
 
         self.location_button_frame= Frame(background="#F4F4F8", width=240, height=410)
 
-        self.location_office_button= Button(self.location_button_frame, text="Office", width=30, height=1, bg="#7899D4", command=self.selected_location_office)
-        self.location_deans_button= Button(self.location_button_frame, text="Deans", width=30, height=1, bg="#7899D4", command=self.selected_location_dean)
-        self.location_hall_button= Button(self.location_button_frame, text="Hall", width=30, height=1, bg="#7899D4", command=self.selected_location_hall)
-        self.location_gyms_button= Button(self.location_button_frame, text="Gyms", width=30, height=1, bg="#7899D4", command=self.selected_location_gyms)
+        self.location_office_button= Button(self.location_button_frame, text="Office", width=30, height=1, bg="#7899D4", command=self.multiple_location_office)
+        self.location_deans_button= Button(self.location_button_frame, text="Deans", width=30, height=1, bg="#7899D4", command=self.multiple_location_deans)
+        self.location_hall_button= Button(self.location_button_frame, text="Hall", width=30, height=1, bg="#7899D4", command=self.multiple_location_hall)
+        self.location_gyms_button= Button(self.location_button_frame, text="Gyms", width=30, height=1, bg="#7899D4", command=self.multiple_location_gyms)
 
         self.location_select_frame = Frame(background="#DDE1E4", width=230, height=40)
         self.location_select_text = Label(self.location_select_frame ,background="#DDE1E4", text="Selected :", font=("Ubuntu",20))
@@ -62,13 +62,18 @@ class App():
 
         self.destination_button_frame= Frame(background="#F4F4F8", width=240, height=410)
 
-        self.destination_office_button= Button(self.destination_button_frame, text="Office", width=30, height=1, bg="#7899D4")
-        self.destination_deans_button= Button(self.destination_button_frame, text="Deans", width=30, height=1, bg="#7899D4")
-        self.destination_hall_button= Button(self.destination_button_frame, text="Hall", width=30, height=1, bg="#7899D4")
-        self.destination_gyms_button= Button(self.destination_button_frame, text="Gyms", width=30, height=1, bg="#7899D4")
+        self.destination_office_button= Button(self.destination_button_frame, text="Office", width=30, height=1, bg="#7899D4", command=self.multiple_destination_office)
+        self.destination_deans_button= Button(self.destination_button_frame, text="Deans", width=30, height=1, bg="#7899D4", command=self.multiple_destination_deans)
+        self.destination_hall_button= Button(self.destination_button_frame, text="Hall", width=30, height=1, bg="#7899D4", command=self.multiple_destination_hall)
+        self.destination_gyms_button= Button(self.destination_button_frame, text="Gyms", width=30, height=1, bg="#7899D4", command=self.multiple_destination_gyms)
 
         self.destination_select_frame = Frame(background="#DDE1E4", width=230, height=40)
         self.destination_select_text = Label(self.destination_select_frame ,background="#DDE1E4", text="Selected :", font=("Ubuntu",20))
+
+        self.destination_select_office = Label(self.destination_select_frame ,background="#DDE1E4", text="Office", font=("Ubuntu",20))
+        self.destination_select_deans = Label(self.destination_select_frame ,background="#DDE1E4", text=" Deans", font=("Ubuntu",20))
+        self.destination_select_gyms = Label(self.destination_select_frame ,background="#DDE1E4", text=" Gyms", font=("Ubuntu",20))
+        self.destination_select_hall = Label(self.destination_select_frame ,background="#DDE1E4", text="Hall", font=("Ubuntu",20))
 
 
         ################################# Direction ############################
@@ -86,7 +91,7 @@ class App():
 
         self.info_button_frame= Frame(background="#F4F4F8", width=240, height=410)
 
-        self.info_office_button= Button(self.info_button_frame, text="Office", width=30, height=1, bg="#7899D4",command=self.office_info)
+        self.info_office_button= Button(self.info_button_frame, text="Office", width=30, height=1, bg="#7899D4",command=self.office_info and self.gone_location_office)
         self.info_deans_button= Button(self.info_button_frame, text="Deans", width=30, height=1, bg="#7899D4", command=self.deans_info)
         self.info_hall_button= Button(self.info_button_frame, text="Hall", width=30, height=1, bg="#7899D4", command=self.hall_info)
         self.info_gyms_button= Button(self.info_button_frame, text="Gyms", width=30, height=1, bg="#7899D4", command=self.gyms_info)
@@ -212,9 +217,98 @@ The Department is well served with quality teachers. The HPE Staff are passionat
     def selected_location_hall(self):
        self.location_select_hall.place(x=125, y=0)
        
-       
-       
-        
+   ######################### def destination selected text ###########################
+    def selected_destination_office(self):
+        self.destination_select_office.place(x=125, y=0)
+      
+    def selected_destination_dean(self):
+       self.destination_select_deans.place(x=125, y=0)
+
+    def selected_destination_gyms(self):
+       self.destination_select_gyms.place(x=125, y=0)
+
+    def selected_destination_hall(self):
+       self.destination_select_hall.place(x=125, y=0)
+
+   ###################### disappear labels location selected #######################
+
+    def gone_location_office(self):
+       self.location_select_deans.place_forget()
+       self.location_select_gyms.place_forget()
+       self.location_select_hall.place_forget()
+
+    def gone_location_deans(self):
+       self.location_select_office.place_forget()
+       self.location_select_gyms.place_forget()
+       self.location_select_hall.place_forget()
+
+    def gone_location_gyms(self):
+       self.location_select_office.place_forget()
+       self.location_select_deans.place_forget()
+       self.location_select_hall.place_forget()
+
+    def gone_location_hall(self):
+       self.location_select_deans.place_forget()
+       self.location_select_gyms.place_forget()
+       self.location_select_office.place_forget()
+
+##########################   disappear labels location selected    #################################
+    def gone_destination_office(self):
+       self.destination_select_deans.place_forget()
+       self.destination_select_gyms.place_forget()
+       self.destination_select_hall.place_forget()
+
+    def gone_destination_deans(self):
+       self.destination_select_office.place_forget()
+       self.destination_select_gyms.place_forget()
+       self.destination_select_hall.place_forget()
+
+    def gone_destination_gyms(self):
+       self.destination_select_office.place_forget()
+       self.destination_select_deans.place_forget()
+       self.destination_select_hall.place_forget()
+
+    def gone_destination_hall(self):
+       self.destination_select_deans.place_forget()
+       self.destination_select_gyms.place_forget()
+       self.destination_select_office.place_forget()
+
+######################## disappear labels selected + def location selected text #########################
+    def multiple_location_office(self):
+       self.selected_location_office()
+       self.gone_location_office()
+
+    def multiple_location_deans(self):
+       self.selected_location_dean()
+       self.gone_location_deans()
+
+    def multiple_location_gyms(self):
+       self.selected_location_gyms()
+       self.gone_location_gyms()
+
+    def multiple_location_hall(self):
+       self.selected_location_hall()
+       self.gone_location_hall()
+
+#################### disappear labels selected + def destination selected text ##########################
+
+    def multiple_destination_office(self):
+       self.selected_destination_office()
+       self.gone_destination_office()
+
+    def multiple_destination_deans(self):
+       self.selected_destination_dean()
+       self.gone_destination_deans()
+
+    def multiple_destination_gyms(self):
+       self.selected_destination_gyms()
+       self.gone_destination_gyms()
+
+    def multiple_destination_hall(self):
+       self.selected_destination_hall()
+       self.gone_destination_hall()
+   
+   
     #............................. DEF ...............................
 
 
