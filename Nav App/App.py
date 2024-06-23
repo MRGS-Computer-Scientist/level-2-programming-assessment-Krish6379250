@@ -83,15 +83,53 @@ class App():
 
         self.direction_button_frame= Frame(background="#F4F4F8", width=240, height=410)
 
+        self.location_variable = StringVar()
+
+        self.destination_variable = StringVar()
+        ###################### ALL 12 LABEL DIRECTIONS ######################
+
+
+
+
+
+        ##################### all 12 if statements for directions ############################
+
+        if self.location_variable == "office" and self.destination_variable == "deans": #1 
+         
+        if self.location_variable == "office" and self.destination_variable == "gyms": #2
+
+        if self.location_variable == "office" and self.destination_variable == "deans": #3
+         
+        if self.location_variable == "deans" and self.destination_variable == "office": #4
+         
+        if self.location_variable == "deans" and self.destination_variable == "gyms": #5
+
+        if self.location_variable == "deans" and self.destination_variable == "hall": #6
+           
+        if self.location_variable == "gyms" and self.destination_variable == "deans": #7
+         
+        if self.location_variable == "gyms" and self.destination_variable == "office": #8
+
+        if self.location_variable == "gyms" and self.destination_variable == "deans": #9
+
+        if self.location_variable == "hall" and self.destination_variable == "deans":#10
+         
+        if self.location_variable == "hall" and self.destination_variable == "gyms": #11
+
+        if self.location_variable == "hall" and self.destination_variable == "office":   #12 
+           
+
+
 
         ############################### Info ####################################
 
         self.info_frame = Frame(background="#DDE1E4", width=250, height=470)
+
         self.info_headline = Label(self.info_frame, text="Info", font=("Ubuntu",25), bg="#DDE1E4")
 
         self.info_button_frame= Frame(background="#F4F4F8", width=240, height=410)
 
-        self.info_office_button= Button(self.info_button_frame, text="Office", width=30, height=1, bg="#7899D4",command=self.office_info and self.gone_location_office)
+        self.info_office_button= Button(self.info_button_frame, text="Office", width=30, height=1, bg="#7899D4",command=self.office_info )
         self.info_deans_button= Button(self.info_button_frame, text="Deans", width=30, height=1, bg="#7899D4", command=self.deans_info)
         self.info_hall_button= Button(self.info_button_frame, text="Hall", width=30, height=1, bg="#7899D4", command=self.hall_info)
         self.info_gyms_button= Button(self.info_button_frame, text="Gyms", width=30, height=1, bg="#7899D4", command=self.gyms_info)
@@ -277,38 +315,71 @@ The Department is well served with quality teachers. The HPE Staff are passionat
     def multiple_location_office(self):
        self.selected_location_office()
        self.gone_location_office()
+       self.update_location_variable_office()
 
     def multiple_location_deans(self):
        self.selected_location_dean()
        self.gone_location_deans()
+       self.update_location_variable_deans()
 
     def multiple_location_gyms(self):
        self.selected_location_gyms()
        self.gone_location_gyms()
+       self.update_location_variable_gyms()
 
     def multiple_location_hall(self):
        self.selected_location_hall()
        self.gone_location_hall()
+       self.update_location_variable_hall()
 
 #################### disappear labels selected + def destination selected text ##########################
 
     def multiple_destination_office(self):
        self.selected_destination_office()
        self.gone_destination_office()
+       self.update_destination_variable_office()
 
     def multiple_destination_deans(self):
        self.selected_destination_dean()
        self.gone_destination_deans()
+       self.update_destination_variable_deans()
 
     def multiple_destination_gyms(self):
        self.selected_destination_gyms()
        self.gone_destination_gyms()
+       self.update_destination_variable_gyms()
 
     def multiple_destination_hall(self):
        self.selected_destination_hall()
        self.gone_destination_hall()
-   
-   
+       self.update_destination_variable_hall()
+   ##################### direction def location ############################   
+
+    def update_location_variable_office(self):
+       self.location_variable = "office"
+      
+    def update_location_variable_deans(self):
+       self.location_variable = "deans"
+
+    def update_location_variable_gyms(self):
+       self.location_variable = "gyms"
+
+    def update_location_variable_hall(self):
+       self.location_variable = "hall"
+##################### direction def destination ########################
+    def update_destination_variable_office(self):
+       self.destination_variable = "office"
+      
+    def update_destination_variable_deans(self):
+       self.destination_variable = "deans"
+
+    def update_destination_variable_gyms(self):
+       self.destination_variable = "gyms"
+
+    def update_destination_variable_hall(self):
+       self.destination_variable = "hall"
+
+
     #............................. DEF ...............................
 
 
