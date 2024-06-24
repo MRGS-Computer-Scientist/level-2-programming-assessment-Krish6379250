@@ -81,45 +81,71 @@ class App():
         self.direction_frame = Frame(background="#DDE1E4", width=250, height=470)
         self.direction_headline = Label(self.direction_frame, text="Direction", font=("Ubuntu",25), bg="#DDE1E4")
 
-        self.direction_button_frame= Frame(background="#F4F4F8", width=240, height=410)
+        self.direction_text_frame= Frame(background="#F4F4F8", width=240, height=410)
 
         self.location_variable = StringVar()
 
         self.destination_variable = StringVar()
         ###################### ALL 12 LABEL DIRECTIONS ######################
+        self.direction_office_deans = Label(self.direction_text_frame, text="When entering through the office, once you walk past the receptionist, take a left then your destination would be straight ahead", font=("Ubuntu",25), bg="#DDE1E4") #1
 
+        self.direction_office_gyms = Label(self.direction_text_frame, text="When entering through the office, walk straight ahead to the exit, once you're out continue ahead along with A block, once you made it to the end turn left, there you will see a parking lot, instead of going there turn right where the field is, after that turn left and the gyms should be in that direction  ", font=("Ubuntu",25), bg="#DDE1E4") #2
 
+        self.direction_office_hall = Label(self.direction_text_frame, text="When entering through the office, walk straight ahead to the exit, once you're out continue ahead along with A block, once you made it to the end turn left, there you will see a parking lot at which the hall would be the bigger building infront of the car pack.", font=("Ubuntu",25), bg="#DDE1E4") #3
 
+        self.direction_deans_office = Label(self.direction_text_frame, text="When you're at the entrance to the deans just walk straight ahead into the next building, then you are in the office", font=("Ubuntu",25), bg="#DDE1E4") #4
 
+        self.direction_deans_gyms = Label(self.direction_text_frame, text="When you're at the entrance to the deans, take a left then turn right straight after, next take a left but don't go inside A block, Walk straight along A block until you make it to the end there turn left, there you will see a parking lot, instead of going there turn right where the field is, after that turn left and the gyms should be in that direction", font=("Ubuntu",25), bg="#DDE1E4") #5
 
+        self.direction_deans_hall = Label(self.direction_text_frame, text="When you're at the entrance to the deans, take a left then turn right straight after, next take a left but don't go inside A block, Walk straight along A block until you make it to the end, at the end turn left, there you will see a parking lot at which the hall would be the bigger building infront of the car pack. ", font=("Ubuntu",25), bg="#DDE1E4") #6
+
+        self.direction_gyms_office = Label(self.direction_text_frame, text="Starting from the entrance to Gym 3, walk straight ahead where the field should be, follow the concrete path until there is a right turn, there you will se a parking lot, you should see the hall a big building in front of the parking lot, on the left of the hall there will be little steps leading to the quad, once in the quad walk straight until you reach E block, turn left then take the first right, the deans should be on your left", font=("Ubuntu",25), bg="#DDE1E4") #7
+
+        self.direction_gyms_deans = Label(self.direction_text_frame, text="Starting from the entrance to Gym 3, walk straight ahead where the field should be, follow the concrete path until there is a right turn, there you will se a parking lot, you should see the hall a big building in front of the parking lot, on the left of the hall there will be little steps leading to the quad, once in the quad walk straight until you reach E block, turn left then take the first right, the deans should be on your right", font=("Ubuntu",25), bg="#DDE1E4") #8
+
+        self.direction_gyms_hall = Label(self.direction_text_frame, text="Starting from the entrance to Gym 3, walk straight ahead where the field should be, follow the concrete path until there is a right turn, there you will see a parking lot, there you will see the hall the big building in front the parking lot.", font=("Ubuntu",25), bg="#DDE1E4") #9
+
+        self.direction_hall_office = Label(self.direction_text_frame, text="From the entrance take the first right into the quad, once there walk forwards until you reach it to E block, turn left then take the first right, the office should be on your left", font=("Ubuntu",25), bg="#DDE1E4") #10
+
+        self.direction_hall_deans = Label(self.direction_text_frame, text="From the entrance take the first right into the quad, once there walk forwards until you reach it to E block, turn left then take the first right, the deans should be on your right", font=("Ubuntu",25), bg="#DDE1E4") #11
+
+        self.direction_hall_gyms = Label(self.direction_text_frame, text="From the entrance take the first left at where the field should be, turn left then walk straight ahead until you reach the gyms", font=("Ubuntu",25), bg="#DDE1E4") #12
         ##################### all 12 if statements for directions ############################
-
-        if self.location_variable == "office" and self.destination_variable == "deans": #1 
+        if self.location_variable == "office" and self.destination_variable == "deans": #1
+           self.direction_office_deans.place(x=0, y=10)
          
         if self.location_variable == "office" and self.destination_variable == "gyms": #2
+           self.direction_office_gyms.place(x=0,y=10)
 
-        if self.location_variable == "office" and self.destination_variable == "deans": #3
+        if self.location_variable == "office" and self.destination_variable == "hall": #3
+           self.direction_office_hall.place(x=0, y=10)
          
         if self.location_variable == "deans" and self.destination_variable == "office": #4
+           self.direction_deans_office.place(x=0, y=10)
          
         if self.location_variable == "deans" and self.destination_variable == "gyms": #5
+           self.direction_deans_gyms.place(x=0, y=10)
 
         if self.location_variable == "deans" and self.destination_variable == "hall": #6
+           self.direction_deans_hall.place(x=0, y=10)
            
-        if self.location_variable == "gyms" and self.destination_variable == "deans": #7
+        if self.location_variable == "gyms" and self.destination_variable == "office": #7
+           self.direction_gyms_office.place(x=0, y=10)
          
-        if self.location_variable == "gyms" and self.destination_variable == "office": #8
+        if self.location_variable == "gyms" and self.destination_variable == "deans": #8
+           self.direction_gyms_deans.place(x=0, y=10)
 
-        if self.location_variable == "gyms" and self.destination_variable == "deans": #9
+        if self.location_variable == "gyms" and self.destination_variable == "hall": #9
+           self.direction_gyms_hall.place(x=0, y=10)
 
-        if self.location_variable == "hall" and self.destination_variable == "deans":#10
+        if self.location_variable == "hall" and self.destination_variable == "office": #10
+           self.direction_hall_office.place(x=0, y=10)
          
-        if self.location_variable == "hall" and self.destination_variable == "gyms": #11
+        if self.location_variable == "hall" and self.destination_variable == "deans": #11
+           self.direction_hall_deans.place(x=0, y=10)
 
-        if self.location_variable == "hall" and self.destination_variable == "office":   #12 
-           
-
-
+        if self.location_variable == "hall" and self.destination_variable == "gyms": #12 
+           self.direction_hall_gyms.place(x=0, y=10)
 
         ############################### Info ####################################
 
@@ -191,7 +217,7 @@ The Department is well served with quality teachers. The HPE Staff are passionat
            ############### component inner frames ##################
            self.location_button_frame.place(x=10, y=55)
            self.destination_button_frame.place(x=350, y=55)
-           self.direction_button_frame.place(x=10, y=550)
+           self.direction_text_frame.place(x=10, y=550)
            self.info_button_frame.place(x=350, y=550)
            self.info_text_frame.place(x=5, y=130)
            self.location_select_frame.place(x=15, y=200)
