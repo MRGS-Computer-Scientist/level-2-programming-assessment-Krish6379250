@@ -173,7 +173,7 @@ The Deans is where each house is put
         self.office_info_text = Label(self.info_text_frame, background="#FDFFFC", wraplength=230, text="""
 At MRGS the use of the office is to manage administrative duties, such as answering calls and correspondence, ordering supplies and handling information, they also are use in for helping students and parents.
 """)
-        self.gyms__info_text = Label(self.info_text_frame, background="#FDFFFC", wraplength=230, text="""
+        self.gyms_info_text = Label(self.info_text_frame, background="#FDFFFC", wraplength=230, text="""
 MRGS is fortunate to have great facilities for our students to enjoy. Three Gymnasium, field, turf and a swimming pool allow students to participate in a variety of activities in a comfortable environment.
 The Department is well served with quality teachers. The HPE Staff are passionate about helping and encouraging all students, to reach their potential, acquire the knowledge that is needed for independent, critical thinkers and to  develop skills for lifelong learning.
 """)
@@ -265,7 +265,27 @@ The Department is well served with quality teachers. The HPE Staff are passionat
        self.office_info_text.place(x=2, y=0)
     
     def gyms_info(self):
-       self.gyms__info_text.place(x=2, y=0)
+       self.gyms_info_text.place(x=2, y=0)
+############################ def information disappear text #################################
+    def info_disappear_office(self):
+       self.deans_info_text.place_forget()
+       self.gyms_info_text.place_forget()
+       self.hall_info_text.place_forget()
+       
+    def info_disappear_deans(self):
+       self.office_info_text.place_forget()
+       self.gyms_info_text.place_forget()
+       self.hall_info_text.place_forget()
+       
+    def info_disappear_gyms(self):
+       self.office_info_text.place_forget()
+       self.deans_info_text.place_forget()
+       self.hall_info_text.place_forget()
+       
+    def info_disappear_hall(self):
+       self.office_info_text.place_forget()
+       self.deans_info_text.place_forget()
+       self.gyms_info_text.place_forget()
 
     ####################### def location selected text   #######################
 
@@ -316,7 +336,7 @@ The Department is well served with quality teachers. The HPE Staff are passionat
        self.location_select_gyms.place_forget()
        self.location_select_office.place_forget()
 
-##########################   disappear labels location selected    #################################
+##########################   disappear labels destination selected    #################################
     def gone_destination_office(self):
        self.destination_select_deans.place_forget()
        self.destination_select_gyms.place_forget()
