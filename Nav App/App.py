@@ -1,6 +1,7 @@
 from tkinter import *
 from app_setting import * 
 from os import *
+from PIL import Image
 
 
 class App():
@@ -34,6 +35,8 @@ class App():
 
         ####################### Center Button #################################
         self.map_button = Button(text= "Map", height=5, width=10,  bg="#7899D4")
+
+        
 
         ######################## Location #################################
 
@@ -83,9 +86,9 @@ class App():
 
         self.direction_text_frame= Frame(background="#F4F4F8", width=240, height=410)
 
-        self.location_variable = StringVar()
+        self.location_variable = ""
 
-        self.destination_variable = StringVar()
+        self.destination_variable = ""
         ###################### ALL 12 LABEL DIRECTIONS ######################
         self.direction_office_deans = Label(self.direction_text_frame, text="When entering through the office, once you walk past the receptionist, take a left then your destination would be straight ahead", font=("Ubuntu",25), bg="#DDE1E4") #1
 
@@ -155,10 +158,10 @@ class App():
 
         self.info_button_frame= Frame(background="#F4F4F8", width=240, height=410)
 
-        self.info_office_button= Button(self.info_button_frame, text="Office", width=30, height=1, bg="#7899D4",command=self.office_info )
-        self.info_deans_button= Button(self.info_button_frame, text="Deans", width=30, height=1, bg="#7899D4", command=self.deans_info)
-        self.info_hall_button= Button(self.info_button_frame, text="Hall", width=30, height=1, bg="#7899D4", command=self.hall_info)
-        self.info_gyms_button= Button(self.info_button_frame, text="Gyms", width=30, height=1, bg="#7899D4", command=self.gyms_info)
+        self.info_office_button= Button(self.info_button_frame, text="Office", width=30, height=1, bg="#7899D4",command=self.info_function_office )
+        self.info_deans_button= Button(self.info_button_frame, text="Deans", width=30, height=1, bg="#7899D4", command=self.info_function_deans)
+        self.info_hall_button= Button(self.info_button_frame, text="Hall", width=30, height=1, bg="#7899D4", command=self.info_function_hall)
+        self.info_gyms_button= Button(self.info_button_frame, text="Gyms", width=30, height=1, bg="#7899D4", command=self.info_function_gyms)
 
         self.info_text_frame = Frame(self.info_button_frame ,background="#FDFFFC",width=230, height=275 )
 
@@ -286,6 +289,24 @@ The Department is well served with quality teachers. The HPE Staff are passionat
        self.office_info_text.place_forget()
        self.deans_info_text.place_forget()
        self.gyms_info_text.place_forget()
+############################## Def information combine ########################
+    def info_function_office(self):
+       self.office_info()
+       self.info_disappear_office()
+       
+    def info_function_deans(self):
+       self.deans_info()
+       self.info_disappear_deans()
+       
+    def info_function_gyms(self):
+       self.gyms_info()
+       self.info_disappear_gyms()
+       
+    def info_function_hall(self):
+       self.hall_info()
+       self.info_disappear_hall()
+          
+
 
     ####################### def location selected text   #######################
 
@@ -424,6 +445,7 @@ The Department is well served with quality teachers. The HPE Staff are passionat
 
     def update_destination_variable_hall(self):
        self.destination_variable = "hall"
+######################## map button #######################
 
 
     #............................. DEF ...............................
